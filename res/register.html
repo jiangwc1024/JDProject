@@ -1,0 +1,144 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-03-09 10:28:46
+ * @LastEditTime: 2020-03-09 22:07:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /project/JDProject/res/register.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人注册</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <script src="js/jquery-1.11.0.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <div class="header_con">
+                <a href="index.html" class="logo"></a>
+                <div class="wel">欢迎注册</div>
+                <div class="have">
+                    已有账号
+                    <a href="login.html">请登录></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main_con">
+                <div class="module1 clearfix">
+                    <div class="main1">
+                        <span class="number1">1</span>
+                        <p class="no">输入信息</p>
+                    </div>
+                    <div class="main2"></div>
+                    <div class="main3">
+                        <span class="number2">2</span>
+                        <p>填写账号信息</p>
+                    </div>
+                    <div class="main4">
+                    </div>
+                    <div class="main5">
+                        <span class="number3">3</span>
+                        <p>注册成功</p>
+                    </div>
+                </div>
+                <div class="module2 clearfix">
+                    <div class="check_country">
+                        账号
+                        <span class="choose_span"></span>
+                    </div>
+                    <div class="phone_number">
+                        <input class="user"type="text" placeholder="请输入账号">
+                    </div>
+                    <div class="check_country1">
+                        密码
+                        <span class="choose_span"></span>
+                    </div>
+                    <div class="phone_number1">
+                        <input class = "PWD"type="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="btn">注册</div>
+                <div class="prompt">1</div>
+                <div class="main_bottom clearfix">
+                    <a href="#" class="com">
+                        <span class="left_span"></span>
+                        企业用户登录</a>
+                    <a href="#" class="outside">
+                        <span class="right_span"></span>
+                        海外用户登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom_con">
+                <div class="links">
+                    <a href="#">关于我们</a>
+                    |
+                    <a href="#">联系我们</a>
+                    |
+                    <a href="#">人才招聘</a>
+                    |
+                    <a href="#">商家入驻</a>
+                    |
+                    <a href="#">广告服务</a>
+                    |
+                    <a href="#">手机京东</a>
+                    |
+                    <a href="#">友情链接</a>
+                    |
+                    <a href="#">销售联盟</a>
+                    |
+                    <a href="#">京东社区</a>
+                    |
+                    <a href="#">京东公益</a>
+                    |
+                    <a href="#">English site</a>
+                    <div class="copy">
+                        Copyright©2004-2020  京东JD.com 版权所有
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+$(function () {
+  $(".btn").click(()=>{
+      $.get("http://jx.xuzhixiang.top/ap/api/checkname.php",
+      {username:$(".user").val()},
+      (data)=>{
+          //不重名
+          console.log($(".user").val());
+          console.log(data.code);
+          if(data.code==1){
+            $.get("http://jx.xuzhixiang.top/ap/api/reg.php",
+            {username:$(".user").val(),
+            password:$(".PWD").val()
+            },
+            (data)=>{
+                if(data.code==1){
+                $(".prompt").css("display","block");
+                $(".prompt").html(data.msg);
+                location.href="login.html";
+                }
+            }
+            );
+          }else{
+              $(".prompt").css("display","block");
+              $(".prompt").html(data.msg);
+              setTimeout(()=>{
+                $(".prompt").css("display","none");
+              },2000)
+          }
+      })
+    
+  });
+});
+    </script>
+</body>
+</html>

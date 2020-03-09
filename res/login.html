@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-03-08 12:58:11
+ * @LastEditTime: 2020-03-09 22:56:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /project/JDProject/res/login.html
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +16,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/base.css">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/cookie.js"></script>
 </head>
 <body>
 <!--登录头部开始-->
@@ -41,8 +51,11 @@
             </div>
             <div class="middle">
                 <div class="inputs">
+                    <div class="prompt">
+                        1
+                    </div>
                     <input type="text" class="public user">
-                    <input type="text" class="public pwd">
+                    <input type="password" class="public PWD">
                     <span class="user_img"></span>
                     <span class="pwd_img"></span>
                     <a href="#">忘记密码</a>
@@ -56,7 +69,7 @@
                 <a href="#" class="wx">
                     <b></b>微信
                 </a>
-                <a href="#" class="register">
+                <a href="register.html" class="register">
                     <b></b>立即注册
                 </a>
             </div>
@@ -83,5 +96,37 @@
     <p class="copyright">Copyright © 2004-2020  京东JD.com 版权所有</p>
 </div>
 <!--尾部结束-->
+<script>
+    $(function(){
+        $(".btn").click(()=>{
+            $.get("http://jx.xuzhixiang.top/ap/api/login.php",
+            {username:$(".user").val(),
+            password:$(".PWD").val()
+            },
+            (data)=>{
+                if(data.code==1){
+              $(".prompt").css("display","block");
+              $(".prompt").html(data.msg);
+              setTimeout(()=>{
+                $(".prompt").css("display","none");
+              },2000)
+              console.log(data.data);
+              setCookie("id",data.data.id);
+              setCookie("username",data.data.username);
+              setCookie("password",data.data.password);
+              location.href = "index.html";
+
+                }else{
+              $(".prompt").css("display","block");
+              $(".prompt").html(data.msg);
+              setTimeout(()=>{
+                $(".prompt").css("display","none");
+              },2000)
+                }
+            }
+            );
+        })
+    })
+</script>
 </body>
 </html>

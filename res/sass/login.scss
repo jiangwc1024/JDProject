@@ -145,6 +145,16 @@
     margin-top: 20px;
     font-size: 20px;
     text-align: center;
+    position: relative;
+}
+.prompt{
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    top: 116px;
+    color: red;
+    text-align: center;
+    display: none;
 }
 .bottom {
     margin-top: 30px;

@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-03-08 11:10:17
- * @LastEditTime: 2020-03-08 12:25:03
- * @LastEditors: your name
+ * @LastEditTime: 2020-03-09 11:24:23
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /project/JDProject/gulpfile.js
  */
@@ -44,11 +44,18 @@ gulp.task("iconfont",done=>{
     .pipe(gulp.dest("dist/iconfont"));
     done();
 });
+gulp.task("js",done=>{
+    gulp.src("res/js/*.js")
+    .pipe(gulp.dest("dist/js"))
+    .pipe(connect.reload());
+    done();
+});
 gulp.task("watch",done=>{
     gulp.watch("res/sass/*.scss",gulp.series("sass"));
     gulp.watch("res/*.html",gulp.series("html"));
     gulp.watch("res/img/*",gulp.series("img"));
     gulp.watch("res/iconfont/*",gulp.series("iconfont"));
+    gulp.watch("res/js/*.js",gulp.series("js"));
     done();
 });
 gulp.task("default",gulp.parallel("server","watch"));

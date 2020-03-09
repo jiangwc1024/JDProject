@@ -1,0 +1,246 @@
+.box{
+    min-width: 1210px;
+}
+.header{
+    height: 110px;
+}
+.header_con{
+    width: 1210px;
+    height: 110px;
+    margin: 0 auto;
+}
+.logo{
+    width: 160px;
+    height: 50px;
+    float: left;
+    margin-top: 24px;
+    background: url("../img/icon.png") no-repeat;
+}
+.wel{
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    font-size: 24px;
+    color: #333;
+    margin-top: 34px;
+}
+.have{
+    font-size: 16px;
+    float: right;
+    margin-top: 55px;
+    color: #999;
+}
+.have a{
+    color: #e22;
+}
+.main_con{
+    width: 1210px;
+    margin: 0 auto;
+}
+.module1{
+    position: relative;
+    margin: 80px auto 0;
+    width: 400px;
+    position: relative;
+}
+@mixin mou1 {
+    width: 60px;
+    height: 55px;
+    text-align: center;
+    float: left;
+}
+.main1{
+    @include mou1;
+}
+.main3{
+    @include mou1;
+    margin-left: 106px;
+}
+.main5{
+    @include mou1;
+    margin-left: 112px;
+}
+.main2{
+    position:absolute;
+    width: 124px;
+    height: 10px;
+    left: 55px;
+    top:5px;
+    background: url("../img/reg-icon.png") no-repeat
+     0 -100px;
+}
+.main4{
+    position:absolute;
+    width: 124px;
+    height: 10px;
+    left: 228px;
+    top:5px;
+    background: url("../img/reg-icon.png") no-repeat
+     0 -100px;
+}
+.number1{
+    margin: 0 auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    color: greenyellow;
+    border: 1px solid greenyellow;
+    border-radius: 50%;
+}
+.number2,.number3{
+    margin: 0 auto;
+    display: block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    border: 1px solid #999;
+    border-radius: 50%;
+}
+.no{
+    color: greenyellow;
+}
+.module1 p{
+    white-space: nowrap;
+    margin-top: 10px;
+}
+.module2{
+    margin: 50px auto 30px;
+    width: 400px;
+}
+.check_country{
+    width: 106px;
+    height: 52px;
+    float: left;
+    line-height: 52px;
+    text-align: center;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    font-size: 14px;
+}
+.phone_number{
+    width: 260px;
+    height: 52px;
+    float: left;
+    border: 1px solid #999999;
+    padding: 0 15px;
+}
+.phone_number input{
+    height: 46px;
+    font-size: 14px;
+    margin-top: 3px;
+}
+.check_country1{
+    width: 106px;
+    height: 52px;
+    float: left;
+    line-height: 52px;
+    text-align: center;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    margin-top: 50px;
+    font-size: 14px;
+}
+.phone_number1{
+    width: 260px;
+    height: 52px;
+    float: left;
+    border: 1px solid #999999;
+    padding: 0 15px;
+    margin-top: 50px;
+}
+.phone_number1 input{
+    height: 46px;
+    font-size: 14px;
+    margin-top: 3px;
+}
+.btn{
+    width: 400px;
+    height: 54px;
+    background-color: #e22;
+    margin: 0 auto;
+    color: #ffffff;
+    line-height: 54px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.com,.outside{
+    width: 92px;
+    height: 28px;
+    display: block;
+}
+.com{
+    width: 118px;
+    height: 28px;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+}
+.outside{
+    width: 118px;
+    float: right;
+    line-height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+}
+.main_bottom{
+    margin: 50px auto 30px;
+    width: 400px;
+}
+.left_span{
+    vertical-align: middle;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("../img/reg-icon.png") no-repeat 0 -160px;
+}
+.right_span{
+    vertical-align: middle;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url("../img/reg-icon.png") no-repeat -40px -160px;
+}
+.bottom_con{
+    width: 1210px;
+    height: 66px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: solid 1px #e6e6e6;
+    color: #999;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.bottom_con a{
+    color: #999;
+    margin: 0 10px;
+}
+.bottom_con a:hover{
+    text-decoration: underline;
+}
+.copy{
+    margin-top: 20px;
+}
+.prompt{
+    height: 20px;
+    width: 300px;
+    color: red;
+    text-align: center;
+    margin: 10px auto 0;
+    display: none;
+}
