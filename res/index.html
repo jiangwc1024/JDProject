@@ -15,6 +15,8 @@
     <!--    引入图标字体-->
     <link rel="stylesheet" href="./iconfont/iconfont.css">
     <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/cookie.js"></script>
 </head>
 <body>
@@ -27,45 +29,81 @@
             <a href="#">山东潍坊</a>
         </div>
         <div class="r_nav">
-            <ul>
+            <ul class="nav_list">
                 <li>
                     <a class = "welcome" href="login.html" style="color: red">你好，请登录</a>
                     <a href="register.html">免费注册</a>
                 </li>
-                <li class="line"></li>
                 <li>
                     <a href="#">我的订单</a>
                 </li>
-                <li class="line"></li>
-                <li>
+                <li class="myJD">
                     <a href="#">我的京东</a>
                     <b class="iconfont">&#xe749;</b>
+                    <div class="MyJDList">
+                        <div class="listTop clearfix">
+                            <ul>
+                                <li><a href="#">待处理订单</a></li>
+                                <li><a href="#">消息</a></li>
+                                <li><a href="#">返修退换货</a></li>
+                                <li><a href="#">我的问答</a></li>
+                                <li><a href="#">特价商品</a></li>
+                                <li><a href="#">我的关注</a></li>
+                            </ul>
+                        </div>
+                        <div class="listBottom clearfix">
+                            <ul>
+                                <li><a href="#">我的京东</a></li>
+                                <li><a href="#">我的优惠券</a></li>
+                                <li><a href="#">我的白条</a></li>
+                                <li><a href="#">我的理财</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
-                <li class="line"></li>
                 <li>
                     <a href="#">京东会员</a>
                 </li>
-                <li class="line"></li>
                 <li>
                     <a href="#">企业采购</a>
                 </li>
-                <li class="line"></li>
-                <li>
+                <li class="KF clearfix">
                     <a href="#">客户服务</a>
                     <b class="iconfont">&#xe749;</b>
+                    <div class="KFList clearfix">
+                        <div class="KFListTop clearfix">
+                        <div class="title">客户</div>
+                        <div class="item"><a href="#">帮助中心</a></div>
+                        <div class="item"><a href="#">售后服务</a></div>
+                        <div class="item"><a href="#">在线客服</a></div>
+                        <div class="item"><a href="#">意见建议</a></div>
+                        <div class="item"><a href="#">电话客服</a></div>
+                        <div class="item"><a href="#">客服邮箱</a></div>
+                        <div class="item"><a href="#">金融咨询</a></div>
+                        <div class="item"><a href="#">全球售客服</a></div>
+                        </div>
+                        <div class="KFListBottom clearfix">
+                            <div class="title">商户</div>
+                            <div class="item"><a href="#">合作招商</a></div>
+                            <div class="item"><a href="#">成长中心</a></div>
+                            <div class="item"><a href="#">商家后台</a></div>
+                            <div class="item"><a href="#">京麦工作台</a></div>
+                            <div class="item"><a href="#">商家帮助</a></div>
+                            <div class="item"><a href="#">工作平台</a></div>
+                        </div>
+                    </div>
+                    
                 </li>
-                <li class="line"></li>
                 <li>
                     <a href="#">网站导航</a>
                     <b class="iconfont">&#xe749;</b>
                 </li>
-                <li class="line"></li>
-                <li>
+                <li class="ewm">
                     <a href="#">手机京东</a>
                     <span class="phone">
 	  	  	   	  			 <s></s>
 	  	  	   	  			 <img src="./img/code.png" alt="">
-	  	  	   	  		</span>
+	  	  	   	  	</span>
                 </li>
             </ul>
         </div>
@@ -86,7 +124,11 @@
     <div class="cart">
         <b class="iconfont">&#xe746;</b>
         <a href="#">我的购物车</a>
-        <span>0</span>
+        <span class="cat_num">0</span>
+        <div class="car_dist">
+            <i class="img_cart"></i>
+            购物车中环没有任何商品，快去选购吧
+        </div>
     </div>
     <div class="hot_word">
         <ul>
@@ -142,60 +184,2087 @@
                         <a href="#">家用电器</a>
                     </li>
                     <li>
-                        <a href="#">手机 / 运营商 / 数码</a>
+                        <a href="#">手机</a> / <a href="#">运营商</a> / <a href="#">数码</a>
                     </li>
                     <li>
-                        <a href="#">电脑 / 办公</a>
+                        <a href="#">电脑</a> / <a href="#">办公</a>
                     </li>
                     <li>
-                        <a href="#">家居 / 家具 / 家装 / 厨具</a>
+                        <a href="#">家居</a>/ <a href="#">家具</a> / <a href="#">家装</a> / <a href="#">厨具</a>
                     </li>
                     <li>
-                        <a href="#">男装 / 女装 / 童装 / 内衣</a>
+                        <a href="#">男装</a> / <a href="#">女装</a> / <a href="#">童装</a> / <a href="#">内衣</a>
                     </li>
                     <li>
-                        <a href="#">美妆 / 个护清洁 / 宠物</a>
+                        <a href="#">美妆</a> / <a href="#">个护清洁</a> / <a href="#">宠物</a>
                     </li>
                     <li>
-                        <a href="#">女鞋 / 箱包 / 钟表 / 珠宝</a>
+                        <a href="#">女鞋</a> / <a href="#">箱包</a> / <a href="#">钟表</a> / <a href="#">珠宝</a>
                     </li>
                     <li>
-                        <a href="#">男鞋 / 运动 / 户外</a>
+                        <a href="#">男鞋</a> / <a href="#">运动</a> / <a href="#">户外</a>
                     </li>
                     <li>
-                        <a href="#">房产 / 汽车 / 汽车用品</a>
+                        <a href="#">房产</a> / <a href="#">汽车</a> / <a href="#">汽车用品</a>
                     </li>
                     <li>
-                        <a href="#">母婴 / 玩具乐器</a>
+                        <a href="#">母婴</a> / <a href="#">玩具乐器</a>
                     </li>
                     <li>
-                        <a href="#">食品 / 酒类 / 生鲜 / 特产</a>
+                        <a href="#">食品</a> / <a href="#">酒类</a> / <a href="#">生鲜</a> / <a href="#">特产</a>
                     </li>
                     <li>
-                        <a href="#">艺术 / 礼品鲜花 / 农资绿植</a>
+                        <a href="#">艺术</a> / <a href="#">礼品鲜花</a> / <a href="#">农资绿植</a>
                     </li>
                     <li>
-                        <a href="#">医药保健 / 计生情趣</a>
+                        <a href="#">医药保健</a> / <a href="#">计生情趣</a>
                     </li>
                     <li>
-                        <a href="#">图书 / 文娱 / 教育 / 电子书</a>
+                        <a href="#">图书</a> / <a href="#">文娱</a> / <a href="#">教育</a> / <a href="#">电子书</a>
                     </li>
                     <li>
-                        <a href="#">机票 / 酒店 / 旅游 / 生活</a>
+                        <a href="#">机票</a> / <a href="#">酒店</a> / <a href="#">旅游</a> / <a href="#">生活</a>
                     </li>
                     <li>
-                        <a href="#">理财 / 众筹 / 白条 / 保险</a>
+                        <a href="#">理财</a> / <a href="#">众筹</a> / <a href="#">白条</a> / <a href="#">保险</a>
                     </li>
                     <li>
-                        <a href="#">安装 / 维修 / 清洗 / 二手</a>
+                        <a href="#">安装</a> / <a href="#">维修</a> / <a href="#">清洗</a> / <a href="#">二手</a>
                     </li>
                     <li>
                         <a href="#">工业品</a>
                     </li>
                 </ul>
+            <div class="twice">
+                <div class="item1 clearfix">
+                    1
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    2
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    3
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item1 clearfix">
+                    <div class="tw_it_left">
+                        <div class="left_top">
+                            <a href="#">金融首页 &gt;</a>
+                            <a href="#">零元评测 &gt;</a>
+                        </div>
+                        <div class="left_bottom clearfix">
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>理财 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东小金库</a>
+                                    <a href="#">基金理财</a>
+                                    <a href="#">定期理财</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>众筹 &gt;</dt>
+                                <dd>
+                                    <a href="#">智能硬件</a>
+                                    <a href="#">流行文化</a>
+                                    <a href="#">生活美学</a>
+                                    <a href="#">公益</a>
+                                    <a href="#">其他权益众筹</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>东家 &gt;</dt>
+                                <dd>
+                                    <a href="#">阳光私募</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>白条 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东白条</a>
+                                    <a href="#">白条联名卡</a>
+                                    <a href="#">京东钢镚</a>
+                                    <a href="#">旅游白条</a>
+                                    <a href="#">安居白条</a>
+                                    <a href="#">校园金融</a>
+                                    <a href="#">京东金采</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>支付 &gt;</dt>
+                                <dd>
+                                    <a href="#">京东支付</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>保险 &gt;</dt>
+                                <dd>
+                                    <a href="#">健康险</a>
+                                    <a href="#">人寿险</a>
+                                    <a href="#">意外险</a>
+                                    <a href="#">旅行险</a>
+                                    <a href="#">财产险</a>
+                                    <a href="#">车险</a>
+                                </dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt>股票 &gt;</dt>
+                                <dd>
+                                    <a href="#">实时资讯</a>
+                                    <a href="#">市场行情</a>
+                                    <a href="#">投资达人</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="tw_it_right">
+                        <div class="right_top">
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r1.jpg" alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="right_bottom">
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="img/banner_r.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            <div class="middle_banner">
-                <img src="./img/banner.png" alt="">
+            </div>
+            <div class="middle_banner clearfix">
+                <div class="ban_min_left">
+
+                </div>
+                <div class="ban_min_right">
+
+                </div>
             </div>
 
             <div class="right_banner">
@@ -208,8 +2277,8 @@
                         <div class="text">
                             <p>Hi~欢迎逛京东</p>
                             <p>
-                                <a href="#">登录</a><span>&nbsp;|</span>
-                                <a href="#">注册</a>
+                                <a href="login.html">登录</a><span>&nbsp;|</span>
+                                <a href="register.html">注册</a>
                             </p>
                         </div>
                     </div>
@@ -386,6 +2455,41 @@
         if(getCookie("username")){
             $(".welcome").html("你好，"+getCookie("username"));
         }
+        //轮播图
+        $('.ban_min_left').slider({
+            imgList: [
+                {
+                    img: 'img/lunbobig01.jpg',
+                    a: '#',
+                },
+                {
+                    img: 'img/lunbobig02.jpg',
+                    a: '#',
+                },
+                {
+                    img: 'img/lunbobig03.jpg',
+                    a: '#',
+                },
+                {
+                    img: 'img/lunbobig04.jpg',
+                    a: '#',
+                }
+            ], //图片的列表
+            width: 590, //图片的宽
+            height: 470, //图片的高
+            isAuto: true, //是否自动轮播
+            moveTime: 6000, //运动时间
+            direction: 'right', //轮播的方向
+            btnWidth: 25, //按钮的宽
+            btnHeight: 25, //按钮的高
+            spanWidth: 10, //span按钮的宽
+            spanHeight: 10, //span按钮的高
+            spanColor: '#fff', //span按钮的颜色
+            activeSpanColor: '#666', //选中的span颜色
+            btnBackgroundColor: 'rgba(0, 0, 0, 0.3)', //两侧按钮的颜色
+            spanRadius: '50%', //span按钮的圆角程度
+            spanMargin: 3, //span之间的距离
+        })
     })
 </script>
 </body>
