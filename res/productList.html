@@ -1,8 +1,113 @@
-<!--
- * @Author: your name
- * @Date: 2020-03-09 10:29:29
- * @LastEditTime: 2020-03-09 10:29:29
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /project/JDProject/res/productList.html
- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表</title>
+    <style>
+    body,ul,li,p{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    img{
+        display: block;
+        border:none;
+    }
+    #prodList li{
+        float: left;
+        margin: 0 10px;
+        width: 220px;
+        padding: 10px;
+        border: 1px solid #cecece;
+		text-align: center;
+    }
+    #prodList img{
+        width: 220px;
+        height: 220px;
+    }
+    #prodList p{
+        margin: 10px;
+    }
+    #prodList input{
+        width: 120px;
+        height: 40px;
+        border: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+    }
+	.title{
+		width: 300px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 30px;
+		font-size: 20px;
+	}
+    </style>
+</head>
+<body>
+  <div class="title">
+  	商品列表
+  </div>
+        <ul id="prodList">          
+        </ul>
+    <script src="js/cart.js"></script>
+    <script>
+
+        let productData = {
+            "10001":{
+                id:10001,
+                title:"商品1",
+                imgsrc:"./img/1.jpg",
+                price:100
+            },
+            "10002":{
+                id:10002,
+                title:"商品2",
+                imgsrc:"./img/2.jpg",
+                price:200
+            },
+            "10003":{
+                id:10003,
+                title:"商品3",
+                imgsrc:"./img/3.jpg",
+                price:300
+            }
+        }
+        localStorage.setItem("productData",JSON.stringify(productData));
+        let productData1 = JSON.parse(localStorage.getItem("productData")); 
+
+
+        let oList = document.getElementById("prodList");
+        
+        let str = ""; //保存结构
+
+        for(let id in productData1){
+            str += `
+            <li>
+                <a href="detail.html?id=${id}"><img src="${productData[id].imgsrc}"></a>
+                <p>${productData[id].title}</p>
+                <p>¥${productData[id].price}</p>
+                <input type="button" value="加入购物车" class="addBtn" data-id="${id}">
+            </li>
+            `;
+        }
+
+        oList.innerHTML = str;
+
+        let cart = new Cart();
+
+        let aAddBtns = document.querySelectorAll(".addBtn");
+        for(let i = 0; i < aAddBtns.length; i++){
+            aAddBtns[i].onclick = function(){
+                let id = aAddBtns[i].getAttribute("data-id");
+                cart.saveData(id,1,false)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-03-09 10:29:59
+ * @LastEditTime: 2020-03-11 21:25:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /JDProject/res/productDetial.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		li{
+			text-align: center;
+		}
+		p{
+			margin: 20px 0;
+		}
+		span{
+			font-size: 20px;
+			cursor: pointer;
+			margin: 0 10px;
+		}
+		#num{
+			width: 50px;
+			text-align: center;
+		}
+		#btn{
+			width: 100px;
+			background: #FF0000;
+			color: #FFFFFF;
+			border: none;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+    <div id="detail">
+        
+    </div>
+    <script src="js/cart.js"></script>
+    <script>
+        let id = location.search.split("=")[1];
+        let productData = JSON.parse(localStorage.getItem("productData"));
+        let data = productData[id];
+        let oDetail = document.getElementById("detail");
+        oDetail.innerHTML = `
+		<ul>
+		<li>
+        <img src="${data.imgsrc}">
+        <p>${data.title}</p>
+        <p>${data.price}</p>
+        <p><span>-</span><input type="text" value="1" id="num"><span>+</span><input type="button" value="加入购物车" id="btn"></p>
+		</li>
+		</ul>
+        `;
+        let oMinus = oDetail.querySelectorAll("span")[0];//减号
+        let oPlus = oDetail.querySelectorAll("span")[1];//加号
+        let oNum = document.getElementById("num");//文本框
+        let oBtn = document.getElementById("btn");//添加购物车按钮
+        oMinus.onclick = function(){
+            oNum.value-- ; //最小值为1
+            if(oNum.value <= 1){
+                oNum.value = 1;
+            }
+        }
+        oPlus.onclick = function(){
+            oNum.value++;
+        }
+        let cart = new Cart();
+        oBtn.onclick = function(){
+            cart.saveData(id,Number(oNum.value),false);
+            location.href = "cartList.html";
+        }
+    </script>
+</body>
+</html>
