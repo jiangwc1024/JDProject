@@ -1,8 +1,129 @@
-<!--
- * @Author: your name
- * @Date: 2020-03-09 10:29:29
- * @LastEditTime: 2020-03-09 10:29:29
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /project/JDProject/res/productList.html
- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/cookie.js"></script>
+    <title>商品列表</title>
+    <style>
+    body,ul,li,p{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    img{
+        display: block;
+        border:none;
+    }
+    #prodList li{
+        float: left;
+        margin: 0 10px;
+        width: 220px;
+        padding: 10px;
+        border: 1px solid #cecece;
+		text-align: center;
+    }
+    #prodList img{
+        width: 220px;
+        height: 220px;
+    }
+    #prodList p{
+        margin: 10px;
+    }
+    #prodList input{
+        width: 120px;
+        height: 40px;
+        border: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+    }
+	.title{
+		width: 300px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 30px;
+		font-size: 20px;
+	}
+    </style>
+</head>
+<body>
+  <div class="title">
+  	商品列表
+  </div>
+        <ul id="prodList">          
+        </ul>
+    <script src="js/cart.js"></script>
+    <script>
+        // $.post("http://jx.xuzhixiang.top/ap/api/goods/goods-add.php",
+        // {
+        //     pimg:"img/ico_service 2.png",
+        //     pname:"商品1",
+        //     pprice:100,
+        //     pdesc:"这是商品1",
+        //     uid:"32953"
+        // }
+        // ).then((data)=>{
+        //     console.log(data);
+        // })
+        $.get("http://jx.xuzhixiang.top/ap/api/allproductlist.php",{
+            uid:"32953"
+        },
+        ).then((data)=>{
+            localStorage.setItem("productData",JSON.stringify(data.data));
+        });
+        
+        let productData1 = JSON.parse(localStorage.getItem("productData")); 
+        console.log(productData1);
+
+        let oList = document.getElementById("prodList");
+        
+        let str = ""; //保存结构
+
+        for(let id in productData1){
+            console.log(id);
+            str += `
+            <li>
+                <a href="productDetial.html?id=${productData1[id].pid}"><img src="${productData1[id].pimg}"></a>
+                <p>${productData1[id].pdesc}</p>
+                <p>¥${productData1[id].pprice}</p>
+                <input type="button" value="加入购物车" class="addBtn" data-id="${productData1[id].pid}">
+            </li>
+            `;
+        }
+
+        oList.innerHTML = str;
+
+        let cart = new Cart();
+
+        let aAddBtns = document.querySelectorAll(".addBtn");
+        for(let i = 0; i < aAddBtns.length; i++){
+            aAddBtns[i].onclick = function(){
+                let id = aAddBtns[i].getAttribute("data-id");
+                let uid = getCookie("id");
+                    if(getCookie("username")){
+                        $.get("http://jx.xuzhixiang.top/ap/api/add-product.php",
+                        {
+                            uid:`${uid}`,
+                            pid:id,
+                            pnum:1
+                        }
+                        ).then((data)=>{
+                            if(data.msg=="插入成功"||data.msg=="更新成功"){
+                                alert("添加成功");
+                            }
+                        })
+                    }else{
+                        alert("您未登录，请先登录");
+                        location.href= "login.html";
+                    }
+                
+            }
+        }
+    </script>
+</body>
+</html>

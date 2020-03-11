@@ -121,7 +121,7 @@
         <a href="#">京东</a>
     </div>
     <div class="search_box">
-        <input type="text" class="search" placeholder="罗技鼠标" autofocus>
+        <input type="text" class="search" placeholder="点击搜索进入商品列表" autofocus>
         <input type="button" class="btn">
         <b class="iconfont search_img">&#xe741;</b>
     </div>
@@ -2851,6 +2851,9 @@
             btnBackgroundColor: 'rgba(0, 0, 0, 0.3)', //两侧按钮的颜色
             spanRadius: '50%', //span按钮的圆角程度
             spanMargin: 3, //span之间的距离
+        });
+        $(".btn").click(function(){
+            location.href = "productList.html";
         })
     })
 </script>

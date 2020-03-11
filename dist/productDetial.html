@@ -1,0 +1,127 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-03-09 10:29:59
+ * @LastEditTime: 2020-03-12 01:04:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /JDProject/res/productDetial.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/cookie.js"></script>
+    <title>商品详情</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		li{
+			text-align: center;
+		}
+		p{
+			margin: 20px 0;
+		}
+		span{
+			font-size: 20px;
+			cursor: pointer;
+			margin: 0 10px;
+		}
+		#num{
+			width: 50px;
+			text-align: center;
+		}
+		#btn{
+			width: 100px;
+			background: #FF0000;
+			color: #FFFFFF;
+			border: none;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+    <div id="detail">
+        
+    </div>
+    <script src="js/cart.js"></script>
+    <script>
+        let id = location.search.split("=")[1];
+        // let productData = JSON.parse(localStorage.getItem("productData"));
+        // function getIndex(data,id){
+        //     for(let i = 0;i<data.length;i++){
+        //         if(data[i].pid==id){
+        //             return i;
+        //         }
+        //     }
+        // }
+        // let data = productData[getIndex(productData,id)];
+        // console.log(data);
+        $.get("http://jx.xuzhixiang.top/ap/api/detail.php",
+        {
+            id:id
+        }).then((data)=>{
+            console.log(data);
+            data = data.data;
+            let oDetail = document.getElementById("detail");
+        oDetail.innerHTML = `
+		<ul>
+		<li>
+        <img src="${data.pimg}">
+        <p>${data.pdesc}</p>
+        <p>${data.pprice}</p>
+        <p><span>-</span><input type="text" value="1" id="num"><span>+</span><input type="button" value="加入购物车" id="btn"></p>
+		</li>
+		</ul>
+        `;
+        let oMinus = oDetail.querySelectorAll("span")[0];//减号
+        let oPlus = oDetail.querySelectorAll("span")[1];//加号
+        let oNum = document.getElementById("num");//文本框
+        let oBtn = document.getElementById("btn");//添加购物车按钮
+        oMinus.onclick = function(){
+            oNum.value-- ; //最小值为1
+            if(oNum.value <= 1){
+                oNum.value = 1;
+            }
+        }
+        oPlus.onclick = function(){
+            oNum.value++;
+        }
+        let cart = new Cart();
+        console.log(id);
+        oBtn.onclick = function(){
+            if(getCookie("username")){
+                let uid = getCookie("id");
+                        $.get("http://jx.xuzhixiang.top/ap/api/add-product.php",
+                        {
+                            uid:`${uid}`,
+                            pid:id,
+                            pnum:oNum.value
+                        }
+                        ).then((data)=>{
+                            console.log(data);
+                            if(data.msg=="修改成功"||data.msg=="插入成功"){
+                                alert("添加成功");
+                                location.href = "shoppingCar.html";
+                            }
+                        })
+                    }else{
+                        alert("您未登录，请先登录");
+                        location.href= "login.html";
+                    }
+            
+        }
+        });
+        
+        
+    </script>
+</body>
+</html>

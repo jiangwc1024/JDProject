@@ -1,8 +1,83 @@
 <!--
  * @Author: your name
  * @Date: 2020-03-09 10:30:33
- * @LastEditTime: 2020-03-09 10:30:34
+ * @LastEditTime: 2020-03-11 23:41:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: /project/JDProject/res/shoppingCar.html
+ * @FilePath: /JDProject/res/shoppingCar.html
  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-1.11.0.js"></script>
+    <script src="js/cookie.js"></script>
+    <title>Document</title>
+    <style>
+        img{
+            width: 50px;
+            height: 50px;
+			position: relative;
+			top: 20px;
+			margin: 0 20px;
+        }
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			margin-left: 50px;
+		}
+		ul,li{
+			list-style: none;
+		}
+		li{
+			margin: 20px 0;
+			border: 1px solid black;
+			width: 1000px;
+			padding-bottom: 30px;
+		}
+		span{
+			margin: 0 10px;
+		}
+		input:nth-of-type(2){
+			width: 40px;
+			text-align: center;
+		}
+		.minus,.plus{
+			cursor: pointer;
+		}
+		.delBtn{
+			border: none;
+			width: 50px;
+			text-align: center;
+			background: #FF0000;
+			color: #FFFFFF;
+			cursor: pointer;
+		}
+		#checkAll,#totalPrice{
+			margin-left: 50px;
+		}
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="checkAll">全选
+    <ul id="cartList">
+       
+    </ul>
+    <div id="totalPrice">总价：0</div>
+    <script src="js/cart.js"></script>
+    <script>
+        //从localStorage获取数据 cartData   
+        
+        let cart = new Cart();
+        cart.showList();
+        cart.updateData();
+        cart.removeData();
+        
+    </script>
+    
+</body>
+</html>
