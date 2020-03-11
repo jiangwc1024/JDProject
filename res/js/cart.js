@@ -1,34 +1,6 @@
 class Cart {
 	constructor() {
-		// if (localStorage.getItem("cartData")) {
-		// 	this.cartData = JSON.parse(localStorage.getItem("cartData"));
-		// } else {
-		// 	this.cartData = {};
-		// }
-		// if(getCookie("username")){
-		// 	let uid = getCookie("id");
-		// 	console.log(uid);
-		// 	$.get("http://jx.xuzhixiang.top/ap/api/cart-list.php",
-		// 	{
-		// 		id:`${uid}`,
-		// 	}
-		// 	).then((data)=>{
-		// 		this.cartData = data;
-		// 	})
-		// }else{
-		// 	alert("您未登录，请先登录");
-		// 	location.href= "login.html";
-		// }
 	}
-	// saveData(id, num, termi) {
-	// 	if (this.cartData[id] === undefined || termi) {
-	// 		this.cartData[id] = num;
-	// 	} else {
-	// 		this.cartData[id] += num;
-	// 	}
-
-	// 	localStorage.setItem("cartData", JSON.stringify(this.cartData));
-	// }
 	showList() {
 		// console.log(this.cartData);
 		this.cartList = document.getElementById("cartList");
