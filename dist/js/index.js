@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-03-10 16:05:27
- * @LastEditTime: 2020-03-12 18:36:20
+ * @LastEditTime: 2020-03-12 19:02:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /JDProject/res/js/index.js
@@ -259,9 +259,17 @@ $(function () {
             console.log($(".floor1"));
             $(".floor1").each(function(i){
                 if(st>=$(this).offset().top-60){
+                    console.log(1);
                     $(".floor li").eq(i).addClass("xs").siblings().removeClass("xs")
                 }
             })
+        });
+        $(window).scroll(function(){
+            let st = $(this).scrollTop();
+            if(st<600){
+                $(".floor li").removeClass("xs");
+            }
+            
         });
         $(".floor li").click(function(){
             $("body,html").stop().animate({"scrollTop":$(".floor1").eq($(this).index()).offset().top-60},800);
