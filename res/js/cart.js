@@ -154,7 +154,11 @@ class Cart {
 				{
 					uid:uid,
 					pid:id
-				})
+				}).then(
+					()=>{
+						location.reload();
+					}
+				)
 
 				this.getTotalPrice();
 

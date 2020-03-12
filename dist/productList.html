@@ -21,8 +21,9 @@
     }
     #prodList li{
         float: left;
-        margin: 0 10px;
+        margin: 20px 10px;
         width: 220px;
+        height: 370px;
         padding: 10px;
         border: 1px solid #cecece;
 		text-align: center;
@@ -33,6 +34,11 @@
     }
     #prodList p{
         margin: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 20px;
+
     }
     #prodList input{
         width: 120px;
@@ -41,6 +47,7 @@
         background-color: red;
         color: white;
         cursor: pointer;
+        margin-top: 20px;
     }
 	.title{
 		width: 300px;
@@ -70,36 +77,27 @@
         // ).then((data)=>{
         //     console.log(data);
         // })
+        if(getCookie("id")){
+            uid = getCookie("id");
         $.get("http://jx.xuzhixiang.top/ap/api/allproductlist.php",{
-            uid:"32953"
+            uid:uid
         },
         ).then((data)=>{
-            localStorage.setItem("productData",JSON.stringify(data.data));
-        });
-        
-        let productData1 = JSON.parse(localStorage.getItem("productData")); 
-        console.log(productData1);
+            data = data.data;
+            let str = ""; //保存结构
 
-        let oList = document.getElementById("prodList");
-        
-        let str = ""; //保存结构
-
-        for(let id in productData1){
-            console.log(id);
+        for(let id in data){
             str += `
             <li>
-                <a href="productDetial.html?id=${productData1[id].pid}"><img src="${productData1[id].pimg}"></a>
-                <p>${productData1[id].pdesc}</p>
-                <p>¥${productData1[id].pprice}</p>
-                <input type="button" value="加入购物车" class="addBtn" data-id="${productData1[id].pid}">
+                <a href="productDetial.html?id=${data[id].pid}"><img src="${data[id].pimg}"></a>
+                <p>${data[id].pdesc}</p>
+                <p>¥${data[id].pprice}</p>
+                <input type="button" value="加入购物车" class="addBtn" data-id="${data[id].pid}">
             </li>
             `;
         }
-
-        oList.innerHTML = str;
-
+        $("#prodList").html(str);
         let cart = new Cart();
-
         let aAddBtns = document.querySelectorAll(".addBtn");
         for(let i = 0; i < aAddBtns.length; i++){
             aAddBtns[i].onclick = function(){
@@ -113,7 +111,8 @@
                             pnum:1
                         }
                         ).then((data)=>{
-                            if(data.msg=="插入成功"||data.msg=="更新成功"){
+                            console.log(data);
+                            if(data.msg=="插入成功"||data.msg=="更新成功"||data.msg=="修改成功"){
                                 alert("添加成功");
                             }
                         })
@@ -124,6 +123,52 @@
                 
             }
         }
+        });
+        }else{
+        $.get("http://jx.xuzhixiang.top/ap/api/allproductlist.php"
+        ).then((data)=>{
+            data = data.data;
+            let str = ""; //保存结构
+
+        for(let id in data){
+            str += `
+            <li>
+                <a href="productDetial.html?id=${data[id].pid}"><img src="${data[id].pimg}"></a>
+                <p>${data[id].pdesc}</p>
+                <p>¥${data[id].pprice}</p>
+                <input type="button" value="加入购物车" class="addBtn" data-id="${data[id].pid}">
+            </li>
+            `;
+        }
+        $("#prodList").html(str);
+        let cart = new Cart();
+        let aAddBtns = document.querySelectorAll(".addBtn");
+        for(let i = 0; i < aAddBtns.length; i++){
+            aAddBtns[i].onclick = function(){
+                let id = aAddBtns[i].getAttribute("data-id");
+                let uid = getCookie("id");
+                    if(getCookie("username")){
+                        $.get("http://jx.xuzhixiang.top/ap/api/add-product.php",
+                        {
+                            uid:`${uid}`,
+                            pid:id,
+                            pnum:1
+                        }
+                        ).then((data)=>{
+                            if(data.msg=="插入成功"||data.msg=="更新成功"||data.msg=="修改成功"){
+                                alert("添加成功");
+                            }
+                        })
+                    }else{
+                        alert("您未登录，请先登录");
+                        location.href= "login.html";
+                    }
+                
+            }
+        }
+        });
+        }
+        
     </script>
 </body>
 </html>

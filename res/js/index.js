@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-03-10 16:05:27
- * @LastEditTime: 2020-03-11 20:54:26
+ * @LastEditTime: 2020-03-12 18:36:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /JDProject/res/js/index.js
@@ -106,28 +106,26 @@ $(function () {
         let index = $(this).index();
         $(".body_item").eq(index).fadeIn().siblings().fadeOut();
     })
-    var oUl = document.querySelector('.paomading');
-    var lis = oUl.getElementsByTagName('li');
-    oUl.style.width = lis.length * lis[0].offsetWidth + 'px';
+    $(".paomading").css("width",$(".paomading li").length*$(".paomading li").outerWidth())
     var left = null;
     timer = setInterval(function () {
-        left -= 3;
-        if (left < -oUl.offsetWidth/2) {
+        left -= 0.5;
+        if (left < -$(".paomading").outerWidth()/2) {
             left = 0;
         }
-        oUl.style.left = left + 'px'
-    }, 100)
+        $(".paomading").css("left",left);
+    }, 10)
     $(".paomading").mouseover(function(){
         clearInterval(timer);
     })
     $(".paomading").mouseout(function(){
         timer = setInterval(function () {
-            left -= 3;
-            if (left < -oUl.offsetWidth/2) {
+            left -= 0.5;
+            if (left < -$(".paomading").outerWidth()/2) {
                 left = 0;
             }
-            oUl.style.left = left + 'px'
-        }, 100)
+            $(".paomading").css("left",left);
+        }, 10)
     })
     $('.box_body1').sliderlast({
         imgList: [{
@@ -158,7 +156,125 @@ $(function () {
         spanRadius: '50%', //span按钮的圆角程度
         spanMargin: 3, //span之间的距离
     })
-    
+    //tab切换
+    $(".box_tab_title li").mouseover(function(){
+        $(this).addClass("active").siblings().removeClass();
+        let index = $(this).index();
+        $(".t_body").eq(index).fadeIn().siblings().fadeOut();
+    })
+    $(".wn_tabu li").click(function(){
+        console.log(1);
+        $(this).find(".top_con").addClass("clickSpan").parent().parent().siblings().find(".top_con").removeClass("clickSpan");
+        $(this).find(".li_bottom").addClass("clicktext").parent().siblings().find(".li_bottom").removeClass("clicktext");
+    });
+    //获取商品列表,有用户登录的时候
+        if(getCookie("id")){
+            uid = getCookie("id");
+        $.get("http://jx.xuzhixiang.top/ap/api/allproductlist.php",{
+            uid:uid
+        },
+        ).then((data)=>{
+            str = '';
+            data = data.data;
+            for(let i in data){
+                str+=`
+                <li>
+                            <a href="productDetial.html?id=${data[i].pid}" class="product">
+                                <div class="inner_img">
+                                    <img src="${data[i].pimg}" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="desc_con">${data[i].pdesc}</p>
+                                    <div class="inner_price">
+                                        <div class="mod_price">
+                                            <i>￥</i>
+                                            <span class="in_price">
+                                                ${data[i].pprice}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                `;
+            }
+            $(".productUL").html(str);
+        });
 
+        }else{
+            //如果没有用户登录，获取公共列表，此处公共列表资源不再本地，图片不显示
+            $.get("http://jx.xuzhixiang.top/ap/api/allproductlist.php"
+        ).then((data)=>{
+            str = '';
+            data = data.data;
+            console.log(data);
+            for(let i in data){
+                str+=`
+                <li>
+                            <a href="productDetial.html?id=${data[i].pid}" class="product">
+                                <div class="inner_img">
+                                    <img src="${data[i].pimg}" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="desc_con">${data[i].pdesc}</p>
+                                    <div class="inner_price">
+                                        <div class="mod_price">
+                                            <i>￥</i>
+                                            <span class="in_price">
+                                                ${data[i].pprice}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                `;
+            }
+            $(".productUL").html(str);
+        });
+        }
+        //页面滚动式，搜索栏以及购物车显示在顶部
+        $(window).scroll(function(){
+            let st = $(this).scrollTop();
+            console.log(st);
+            if(st>400){
+                console.log($(".xlss"));
+                $(".xlss").show().animate({height:"60px"},500);
 
+            }else{
+                $(".xlss").hide().css("height","0");
+            }
+        })
+        //楼层效果
+        $(window).scroll(function(){
+            let st = $(this).scrollTop();
+            if(st>$(".JDMS").offset().top-80){
+                $(".floor").css({position:"fixed",top:"80px",right:"165px"});
+            }else{
+                $(".floor").css({position:"absolute",top:"0",right:"-70px"});
+            }
+        })
+        $(window).scroll(function(){
+            let st = $(this).scrollTop();
+            console.log($(".floor1"));
+            $(".floor1").each(function(i){
+                if(st>=$(this).offset().top-60){
+                    $(".floor li").eq(i).addClass("xs").siblings().removeClass("xs")
+                }
+            })
+        });
+        $(".floor li").click(function(){
+            $("body,html").stop().animate({"scrollTop":$(".floor1").eq($(this).index()).offset().top-60},800);
+        })
+        $(window).scroll(function(){
+            let st = $(this).scrollTop();
+            if(st>$(".wn_list").offset().top-70){
+                console.log($(".xlss"));
+                $(".wntj_tab_c").show().animate({height:"60px"},500);
+
+            }else{
+                $(".wntj_tab_c").hide().css("height","0");
+            }
+        })
+        
 })

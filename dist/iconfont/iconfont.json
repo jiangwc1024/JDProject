@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "637761",
+      "name": "反馈",
+      "font_class": "fankui",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "668861",
+      "name": "回顶部",
+      "font_class": "huidingbu",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "8655875",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    }
+  ]
+}

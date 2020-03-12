@@ -19,12 +19,29 @@
     <script src="js/slider_small.js"></script>
     <script src="js/sliderThree.js"></script>
     <script src="js/jquery.liMarquee.js"></script>
-    <script src="js/sliderlast.js"></script>
+    <script src="js/sliderlast.js"></script><script src="js/cookie.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/cookie.js"></script>
+    
 </head>
 <body>
-
+<div class="xlss">
+    <div class="xlss_con">
+        <div class="search_box" style="margin-left: 279px;margin-top: 14px;">
+            <input type="text" class="search" placeholder="点击搜索进入商品列表" autofocus>
+            <input type="button" class="btn">
+            <b class="iconfont search_img">&#xe741;</b>
+        </div>
+        <div class="cart" style="margin-top: 14px;">
+            <b class="iconfont">&#xe746;</b>
+            <a href="#">我的购物车</a>
+            <span class="cat_num">0</span>
+            <div class="car_dist" style="background-color: white;">
+                <i class="img_cart"></i>
+                购物车中环没有任何商品，快去选购吧
+            </div>
+    </div>
+    </div>
+</div>
 <!--导航开始-->
 <div class="nav">
     <div class="w">
@@ -2329,7 +2346,16 @@
 <!--主体结束-->
 <div class="main">
     <!-- 京东秒杀 -->
-    <div class="JDMS">
+    <div class="JDMS floor1">
+        <ul class="floor">
+            <li>京东秒杀</li>
+            <li>特色优选</li>
+            <li>频道广场</li>
+            <li>为你推荐</li>
+            <li style="line-height: 40px;">客服</li>
+            <li style="line-height: 40px;">反馈</li>
+            <li style="line-height: 40px;">顶部</li>
+        </ul>
         <div class="time clearfix">
             <a href="#" class="DJ_time">
                 <div class="time_title">
@@ -2425,7 +2451,7 @@
     
     </div>
     <!-- 每日特价品牌闪购 -->
-    <div class="module_main2">
+    <div class="module_main2 floor1">
         <div class="main2_cen clearfix">
             <div class="main2_left">
                 <div class="main2_l_header clearfix">
@@ -2672,17 +2698,417 @@
                     <span class="xp_title">排行榜</span>
                     <span class="xp_jiantou"></span>
                 </div>
+                <div class="box_tab">
+                    <ul class="box_tab_title clearfix">
+                        <li class="active">手机</li>
+                        <li>电脑整机</li>
+                        <li>手机配件</li>
+                        <li>网络产品</li>
+                    </ul>
+                    <div class="box_tab_body">
+                        <div class="t_body" style="display: block;">
+                            <img src="img/ph02.png" alt="" srcset="">
+                        </div>
+                        <div class="t_body">
+                            <img src="img/ph01.png" alt="" srcset="">
+                        </div>
+                        <div class="t_body">
+                            <img src="img/ph03.png" alt="" srcset="">
+                        </div>
+                        <div class="t_body">
+                            <img src="img/ph04.png" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="xp_module3">
                 <div class="box_head">
                     <span class="xp_title">逛好店</span>
                     <span class="xp_jiantou"></span>
                 </div>
+                <div class="kh_body">
+                    <div class="kh_top">
+                        <img src="img/kh01.png" alt="">
+                    </div>
+                    <div class="kh_bottom">
+                        <img src="img/kh02.png" alt="">
+                    </div>
+                </div>
             </div>
             <div class="xp_module4">
                 <div class="box_head">
                     <span class="xp_title">领券中心</span>
                     <span class="xp_jiantou"></span>
+                </div>
+                <div class="lq_body">
+                    <img src="img/lq.png" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 频道广场 -->
+    <div class="pd floor1">
+        <div class="pd_con">
+            <h3 class="pd_h">频道广场</h3>
+        </div>
+    </div>
+    <!-- 频道广场内容 -->
+    <div class="pd_content">
+        <div class="pd_inner">
+            <div class="pd_inner_top clearfix">
+                <div class="top1">
+                    <img src="img/pd001.jpg" alt="" srcset="">
+                </div>
+                <div class="top2">
+                    <img src="img/pd002.jpg" alt="" srcset="">
+                </div>
+                <div class="top3 clearfix">
+                    <div class="pd_item m1">
+                        <a href="#" class="pd_item_title">
+                            <span class="bigw">
+                                运动城
+                            </span>
+                            <span class="smallw">
+                                生命在于运动
+                            </span>
+                        </a>
+                        <div class="pd_item_body">
+                            <img src="img/pd003.jpg" alt="" srcset="">
+                            <img src="img/pd004.jpg" alt="" srcset="">
+
+                        </div>
+                    </div>
+                    <div class="pd_item m2">
+                        <a href="#" class="pd_item_title">
+                            <span class="bigw">
+                                运动城
+                            </span>
+                            <span class="smallw">
+                                生命在于运动
+                            </span>
+                        </a>
+                        <div class="pd_item_body">
+                            <img src="img/pd003.jpg" alt="" srcset="">
+                            <img src="img/pd004.jpg" alt="" srcset="">
+
+                        </div>
+                    </div>
+                    <div class="pd_item m3">
+                        <a href="#" class="pd_item_title">
+                            <span class="bigw">
+                                运动城
+                            </span>
+                            <span class="smallw">
+                                生命在于运动
+                            </span>
+                        </a>
+                        <div class="pd_item_body ">
+                            <img src="img/pd003.jpg" alt="" srcset="">
+                            <img src="img/pd004.jpg" alt="" srcset="">
+
+                        </div>
+                    </div>
+                    <div class="pd_item m4">
+                        <a href="#" class="pd_item_title">
+                            <span class="bigw">
+                                运动城
+                            </span>
+                            <span class="smallw">
+                                生命在于运动
+                            </span>
+                        </a>
+                        <div class="pd_item_body">
+                            <img src="img/pd003.jpg" alt="" srcset="">
+                            <img src="img/pd004.jpg" alt="" srcset="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pd_inner_bottom">
+                <div class="pd_item1 l1">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l2">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body ">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l3">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l4">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l1">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l2">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body ">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l3">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l4">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l1">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l2">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body ">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l3">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+                <div class="pd_item1 l4">
+                    <a href="#" class="pd_item_title">
+                        <span class="bigw">
+                            运动城
+                        </span>
+                        <span class="smallw">
+                            生命在于运动
+                        </span>
+                    </a>
+                    <div class="pd_item_body">
+                        <img src="img/pd003.jpg" alt="" srcset="">
+                        <img src="img/pd004.jpg" alt="" srcset="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 为你推荐 -->
+    <div class="pd wn floor1">
+        <div class="pd_con">
+            <h3 class="pd_h">为你推荐</h3>
+        </div>
+    </div>
+    <!-- 为你推荐内容 -->
+    <div class="wn">
+        <div class="wn_con">
+            <div class="wn_tab">
+                <ul class="wn_tabu clearfix">
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                精选
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            猜你喜欢
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                智能先锋
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            大电器城
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                居家优品
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            品质生活
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                超市百货
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            百货生鲜
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                时尚达人
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            美妆穿搭
+                        </div>
+                        <div class="line"></div>
+                    </li>
+                    <li>
+                        <div class="li_top">
+                            <span class="top_con">
+                                进口好物
+                            </span>
+                        </div>
+                        <div class="li_bottom">
+                            京东国际
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="wn_list">
+                <div class="proList clearfix">
+                    <ul class="productUL clearfix">
+                        <li>
+                            <a href="productDetial.html?id=" class="product">
+                                <div class="inner_img">
+                                    <img src="img/pd004.jpg" alt="">
+                                </div>
+                                <div class="desc">
+                                    <p class="desc_con">12312312312</p>
+                                    <div class="inner_price">
+                                        <div class="mod_price">
+                                            <i>￥</i>
+                                            <span class="in_price">
+                                                600
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -2809,6 +3235,77 @@
             <a href="">京东云</a>
         </p>
         <img src="./img/footer.png" alt="">
+    </div>
+</div>
+<div class="wntj_tab_c">
+    <div class="wn_tab">
+        <ul class="wn_tabu clearfix">
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        精选
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    猜你喜欢
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        智能先锋
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    大电器城
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        居家优品
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    品质生活
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        超市百货
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    百货生鲜
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        时尚达人
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    美妆穿搭
+                </div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="li_top">
+                    <span class="top_con">
+                        进口好物
+                    </span>
+                </div>
+                <div class="li_bottom">
+                    京东国际
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
 <!--底部结束-->
