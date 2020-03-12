@@ -1,13 +1,16 @@
 .box{
     min-width: 1210px;
+    
 }
 .header{
     height: 110px;
+    box-shadow: 0px 2px 8px #999;
 }
 .header_con{
     width: 1210px;
     height: 110px;
     margin: 0 auto;
+    
 }
 .logo{
     width: 160px;
@@ -130,11 +133,13 @@
     float: left;
     border: 1px solid #999999;
     padding: 0 15px;
+    
 }
 .phone_number input{
     height: 46px;
     font-size: 14px;
     margin-top: 3px;
+    background-color: #f4f4f4;
 }
 .check_country1{
     width: 106px;
@@ -160,6 +165,7 @@
     height: 46px;
     font-size: 14px;
     margin-top: 3px;
+    background-color: #f4f4f4;
 }
 .btn{
     width: 400px;

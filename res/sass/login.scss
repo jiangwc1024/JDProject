@@ -1,5 +1,8 @@
-.login_w{
+.header{
+    height: 92px;
     background-color: white;
+}
+.login_w{
     height: 92px;
 }
 .l_login{
@@ -19,6 +22,7 @@
     position: absolute;
     left: -22px;
     bottom: -1px;
+    background-color: #f4f4f4;
 }
 .l_login a{
     width: 170px;
