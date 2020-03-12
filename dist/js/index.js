@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-03-10 16:05:27
- * @LastEditTime: 2020-03-12 19:02:40
+ * @LastEditTime: 2020-03-12 21:13:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /JDProject/res/js/index.js
@@ -271,7 +271,7 @@ $(function () {
             }
             
         });
-        $(".floor li").click(function(){
+        $(".floor li:not(:last)").click(function(){
             $("body,html").stop().animate({"scrollTop":$(".floor1").eq($(this).index()).offset().top-60},800);
         })
         $(window).scroll(function(){
@@ -283,6 +283,10 @@ $(function () {
             }else{
                 $(".wntj_tab_c").hide().css("height","0");
             }
+        })
+        //返回顶部
+        $(".floor li:last").click(function(){
+            $("body,html").stop().animate({"scrollTop":0},800);
         })
         
 })
